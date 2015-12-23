@@ -7,10 +7,13 @@ for x in range(0,54):
     if x >= 9 and x < 45:
         twonum = ((x - (x % 3))/3 - 3) * 6
     indent = False
-    if (x + 1) % 3 == 0 and (x < 9 or x > 44):
+    if (x + 1) % 3 == 0 and (x < 9 or x > 44) and x != 8:
         print(rubix[(int(x + num + twonum) - (int(x + num + twonum) % 9)) / 9][int(x + num + twonum) % 9])
-    elif x == 20 or x == 32 or x == 44:
+    elif x == 20 or x == 32:
         print(rubix[(int(x + num + twonum) - (int(x + num + twonum) % 9)) / 9][int(x + num + twonum) % 9])
+    elif x == 8 or x == 44:
+        print(rubix[(int(x + num + twonum) - (int(x + num + twonum) % 9)) / 9][int(x + num + twonum) % 9])
+        print("")
     elif x % 3 == 0 and (x < 9 or x > 44):
         print("       " + str(rubix[(int(x + num + twonum) - (int(x + num + twonum) % 9)) / 9][int(x + num + twonum) % 9]), end = " ")
     elif (x + 1) % 3 == 0 and x > 8 and x < 45:
